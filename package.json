@@ -10,16 +10,19 @@
     "url": "https://github.com/buefy/vue-cli-plugin-buefy/issues"
   },
   "devDependencies": {
+    "@babel/core": "^7.0.0-beta.40",
     "@vue/cli": "^3.0.0-beta.6",
     "@vue/cli-test-utils": "^3.0.0-beta.6",
-    "babel-core": "^7.0.0-0",
     "babel-preset-env": "^1.6.1",
+    "codecov": "^3.0.0",
     "conventional-changelog-cli": "^1.2.0",
     "conventional-github-releaser": "^1.1.3",
     "debug": "^3.1.0",
     "eslint": "^4.16.0",
+    "eslint-config-buefy": "^0.0.2",
     "eslint-plugin-vue-libs": "^2.1.0",
-    "jest": "^22.1.4"
+    "jest": "^22.1.4",
+    "standard-version": "^4.3.0"
   },
   "homepage": "https://github.com/buefy/vue-cli-plugin-buefy#readme",
   "main": "index.js",
@@ -38,15 +41,10 @@
     "changelog": "conventional-changelog -i CHANGELOG.md -s -n ./node_modules/git-commit-message-convention/convention.js",
     "release": "conventional-github-releaser -n ./node_modules/git-commit-message-convention/convention.js",
     "lint": "eslint --ext .js .",
-    "test": "jest"
+    "test": "yarn run lint && jest"
   },
   "jest": {
     "testEnvironment": "node",
-    "testPathIgnorePatterns": [
-      "/temp/"
-    ]
-  },
-  "dependencies": {
-    "@babel/core": "^7.0.0-beta.40"
+    "collectCoverage": true
   }
 }
