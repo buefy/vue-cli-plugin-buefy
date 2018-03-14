@@ -8,9 +8,6 @@ module.exports = (api, options) => {
   // extend package
   api.extendPackage(pkg)
 
-  // basic templates
-  api.render('./templstes/basic', { ...options })
-
   let buefyLines = `\nimport Buefy from 'buefy'`
   if (options.css) {
     buefyLines += `\nimport 'buefy/lib/buefy.css'`
