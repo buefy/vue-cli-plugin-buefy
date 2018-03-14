@@ -17,7 +17,7 @@ module.exports = (api, options) => {
   }
 
   // use Buefy
-  buefyLines += `\n\nVue.user(Buefy)`
+  buefyLines += `\n\nVue.use(Buefy)`
 
   api.onCreateComplete(() => {
     // inject to main.js
