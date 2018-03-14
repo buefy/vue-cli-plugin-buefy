@@ -29,7 +29,7 @@ module.exports = (api, options) => {
     const lines = contentMain.split(/\r?\n/g).reverse()
 
     // inject import
-    const lastImportIndex = lines.findIndex(line => line.match(/^import/))
+    const lastImportIndex = lines.findIndex((line) => line.match(/^import/))
     lines[lastImportIndex] += buefyLines
 
     // modify app
@@ -41,7 +41,7 @@ module.exports = (api, options) => {
       let contentIndex = fs.readFileSync(indexPath, { encoding: 'utf8' })
 
       const lines = contentIndex.split(/\r?\n/g).reverse()
-      const lastLink = lines.findIndex(line => line.match(/^\s*<link/))
+      const lastLink = lines.findIndex((line) => line.match(/^\s*<link/))
 
       lines[lastLink] += `\n<link rel="stylesheet" href="//cdn.materialdesignicons.com/2.0.46/css/materialdesignicons.min.css">`
 
