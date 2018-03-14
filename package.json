@@ -38,8 +38,7 @@
     "url": "git+https://github.com/buefy/vue-cli-plugin-buefy.git"
   },
   "scripts": {
-    "changelog": "conventional-changelog -i CHANGELOG.md -s -n ./node_modules/git-commit-message-convention/convention.js",
-    "release": "conventional-github-releaser -n ./node_modules/git-commit-message-convention/convention.js",
+    "release": "standard-version && git push --follow-tags && npm publish",
     "lint": "eslint --ext .js .",
     "test": "yarn run lint && jest"
   },
