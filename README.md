@@ -8,7 +8,7 @@
 [![js-standard-style](https://img.shields.io/badge/code_style-buefy-7957d5.svg?style=flat-square)](http://buefy.github.io)
 
 
-Vue CLI 3.x plugin to add buefy to your Vue Project
+[Vue CLI 3.x](https://github.com/vuejs/vue-cli) plugin to add buefy to your Vue Project
 
 > Well, apparently you're an [adventurer](https://github.com/vuejs/vue-cli/blob/dev/README.md#status-beta). We are happy to see you here.
 
@@ -34,6 +34,25 @@ Invoke the plugin:
 $ vue invoke buefy
 ```
 
+
+## Global sass resources
+
+You can do that using the css.loaderOptions option in `vue.config.js` to pass some shared global variables to all your Sass styles:
+
+```js
+// vue.config.js
+const fs = require('fs')
+
+module.exports = {
+  css: {
+    loaderOptions: {
+      sass: {
+        data: fs.readFileSync('src/variables.scss', 'utf-8')
+      }
+    }
+  }
+}
+```
 
 ## Changelog
 Details changes for each release are documented in the [CHANGELOG.md](https://github.com/buefy/vue-cli-plugin-buefy/blob/dev/CHANGELOG.md).
