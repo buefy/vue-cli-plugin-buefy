@@ -1,8 +1,9 @@
 module.exports = [{
-  name: `css`,
-  type: `confirm`,
-  message: `Include buefy css?`,
-  default: true
+  name: `includeBuefy`,
+  type: `list`,
+  message: `Include buefy?`,
+  choices: ['No', 'css', 'scss'],
+  default: 0
 },
 {
   name: `materialDesignIcons`,

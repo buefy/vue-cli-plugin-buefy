@@ -9,8 +9,12 @@ module.exports = (api, options) => {
   api.extendPackage(pkg)
 
   let buefyLines = `\nimport Buefy from 'buefy'`
-  if (options.css) {
+  if (options.includeBuefy === 'css') {
     buefyLines += `\nimport 'buefy/lib/buefy.css'`
+  }
+  else if (options.includeBuefy === 'scss') {
+    api.render('./templates/scss')
+    buefyLines += `\nimport './scss/app.scss'`
   }
 
   // use Buefy
