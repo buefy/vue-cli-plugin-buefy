@@ -9,9 +9,9 @@ module.exports = (api, options) => {
   api.extendPackage(pkg)
 
   let buefyLines = `\nimport Buefy from 'buefy'`
-  if (options.includeBuefy === 'css') {
+  if (options.addStyle === 'css') {
     buefyLines += `\nimport 'buefy/lib/buefy.css'`
-  } else if (options.includeBuefy === 'scss') {
+  } else if (options.addStyle === 'scss') {
     api.render('./templates/scss')
     buefyLines += `\nimport './scss/app.scss'`
   }
