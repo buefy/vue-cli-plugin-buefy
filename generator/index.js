@@ -11,8 +11,7 @@ module.exports = (api, options) => {
   let buefyLines = `\nimport Buefy from 'buefy'`
   if (options.includeBuefy === 'css') {
     buefyLines += `\nimport 'buefy/lib/buefy.css'`
-  }
-  else if (options.includeBuefy === 'scss') {
+  } else if (options.includeBuefy === 'scss') {
     api.render('./templates/scss')
     buefyLines += `\nimport './scss/app.scss'`
   }
@@ -37,14 +36,19 @@ module.exports = (api, options) => {
     contentMain = lines.reverse().join('\n')
     fs.writeFileSync(mainPath, contentMain, { encoding: 'utf-8' })
 
-    if (options.materialDesignIcons) {
+    if (options.materialDesignIcons || options.fontAwesomeIcons) {
       const indexPath = api.resolve('./public/index.html')
       let contentIndex = fs.readFileSync(indexPath, { encoding: 'utf8' })
 
       const lines = contentIndex.split(/\r?\n/g).reverse()
       const lastLink = lines.findIndex((line) => line.match(/^\s*<link/))
 
-      lines[lastLink] += `\n<link rel="stylesheet" href="//cdn.materialdesignicons.com/2.0.46/css/materialdesignicons.min.css">`
+      if (options.materialDesignIcons) {
+        lines[lastLink] += `\n<link rel="stylesheet" href="//cdn.materialdesignicons.com/2.0.46/css/materialdesignicons.min.css">`
+      }
+      if (options.fontAwesomeIcons) {
+        lines[lastLink] += `\n<script defer src="https://use.fontawesome.com/releases/v5.0.8/js/all.js" integrity="sha384-SlE991lGASHoBfWbelyBPLsUlwY1GwNDJo3jSJO04KZ33K2bwfV9YBauFfnzvynJ" crossorigin="anonymous"></script>`
+      }
 
       contentIndex = lines.reverse().join('\n')
       fs.writeFileSync(indexPath, contentIndex, { encoding: 'utf8' })
