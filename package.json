@@ -1,7 +1,7 @@
 {
   "name": "vue-cli-plugin-buefy",
   "description": "Vue CLI 3.x plugin to add vue-buefy to your Vue Project",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "author": {
     "name": "anteriovieira",
     "email": "anteriovieira@gmail.com"
