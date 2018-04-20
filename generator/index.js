@@ -12,8 +12,8 @@ module.exports = (api, options) => {
   if (options.addStyle === 'css') {
     buefyLines += `\nimport 'buefy/lib/buefy.css'`
   } else if (options.addStyle === 'scss') {
-    api.render('./templates/scss')
-    buefyLines += `\nimport './scss/app.scss'`
+    api.render('./templates/style')
+    buefyLines += `\nimport './assets/scss/app.scss'`
   }
 
   // use Buefy
