@@ -13,7 +13,7 @@
 > Well, apparently you're an [adventurer](https://github.com/vuejs/vue-cli/blob/dev/README.md#status-beta). We are happy to see you here.
 
 ## Getting Started
-If yon don't have a project created with Vue CLI 3.x:
+If you don't have a project created with Vue CLI 3.x:
 
 ```sh
 $ vue create my-vue-app
@@ -23,15 +23,7 @@ Install the plugin into your project:
 
 ```sh
 $ cd my-vue-app
-$ npm i -D vue-cli-plugin-buefy
-$ # OR:
-$ yarn add -D vue-cli-plugin-buefy
-```
-
-Invoke the plugin:
-
-```sh
-$ vue invoke buefy
+$ vue add buefy
 ```
 
 
@@ -55,7 +47,7 @@ module.exports = {
 ```
 
 ## Changelog
-Details changes for each release are documented in the [CHANGELOG.md](https://github.com/buefy/vue-cli-plugin-buefy/blob/dev/CHANGELOG.md).
+Details of changes for each release are documented in the [CHANGELOG.md](https://github.com/buefy/vue-cli-plugin-buefy/blob/dev/CHANGELOG.md).
 
 
 ## Issues
