@@ -1,17 +1,22 @@
 module.exports = (api, options) => {
-  const pkg = {
+  // extend package
+  api.extendPackage({
     dependencies: {
       'buefy': '^0.6.3'
     }
-  }
-
-  // extend package
-  api.extendPackage(pkg)
+  })
 
   let buefyLines = `\nimport Buefy from 'buefy'`
   if (options.addStyle === 'css') {
     buefyLines += `\nimport 'buefy/lib/buefy.css'`
   } else if (options.addStyle === 'scss') {
+    api.extendPackage({
+      devDependencies: {
+        'node-sass': '^4.9.0',
+        'sass-loader': '^7.0.1'
+      }
+    })
+
     api.render('./templates/style')
     buefyLines += `\nimport './assets/scss/app.scss'`
   }
@@ -22,7 +27,8 @@ module.exports = (api, options) => {
   api.onCreateComplete(() => {
     // inject to main.js
     const fs = require('fs')
-    const mainPath = api.resolve('./src/main.js')
+    const ext = api.hasPlugin('typescript') ? 'ts' : 'js'
+    const mainPath = api.resolve(`./src/main.${ext}`)
 
     // get content
     let contentMain = fs.readFileSync(mainPath, { encoding: 'utf-8' })

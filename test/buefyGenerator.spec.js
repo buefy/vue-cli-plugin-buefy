@@ -11,13 +11,16 @@ describe('buefy', () => {
     expect(pkg.dependencies).toHaveProperty('buefy')
   })
 
-  it('should add import buefy', async () => {
-    const generator = await generateWithPlugin({
+  it('should have sass-loader and node-sass packages', async () => {
+    const { pkg } = await generateWithPlugin({
       id: 'buefy',
       apply: require('../generator'),
-      options: {}
+      options: {
+        addStyle: 'scss'
+      }
     })
 
-    console.log(generator)
+    expect(pkg.devDependencies).toHaveProperty('node-sass')
+    expect(pkg.devDependencies).toHaveProperty('sass-loader')
   })
 })
