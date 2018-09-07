@@ -2,13 +2,13 @@ module.exports = (api, options) => {
   // extend package
   api.extendPackage({
     dependencies: {
-      'buefy': '^0.6.3'
+      'buefy': '^0.6.7'
     }
   })
 
   let buefyLines = `\nimport Buefy from 'buefy'`
   if (options.addStyle === 'css') {
-    buefyLines += `\nimport 'buefy/lib/buefy.css'`
+    buefyLines += `\nimport 'buefy/dist/buefy.css'`
   } else if (options.addStyle === 'scss') {
     api.extendPackage({
       devDependencies: {
