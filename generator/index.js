@@ -2,7 +2,7 @@ module.exports = (api, options) => {
   // extend package
   api.extendPackage({
     dependencies: {
-      'buefy': '^0.7.2'
+      'buefy': '^0.7.3'
     }
   })
 
