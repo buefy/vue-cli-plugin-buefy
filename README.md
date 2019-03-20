@@ -47,15 +47,15 @@ module.exports = {
 ```
 
 ## Changelog
-Details of changes for each release are documented in the [CHANGELOG.md](https://github.com/buefy/vue-cli-plugin-buefy/blob/dev/CHANGELOG.md).
+Details of changes for each release are documented in the [CHANGELOG.md](https://github.com/buefy/vue-cli-plugin-buefy/blob/master/CHANGELOG.md).
 
 
 ## Issues
-Please make sure to read the [Issue Reporting Checklist](https://github.com/buefy/vue-cli-plugin-buefy/blob/dev/.github/CONTRIBUTING.md#issue-reporting-guidelines) before opening an issue. Issues not conforming to the guidelines may be closed immediately.
+Please make sure to read the [Issue Reporting Checklist](https://github.com/buefy/vue-cli-plugin-buefy/blob/master/.github/CONTRIBUTING.md#issue-reporting-guidelines) before opening an issue. Issues not conforming to the guidelines may be closed immediately.
 
 
 ## Contribution
-Please make sure to read the [Contributing Guide](https://github.com/buefy/vue-cli-plugin-buefy/blob/dev/.github/CONTRIBUTING.md) before making a pull request.
+Please make sure to read the [Contributing Guide](https://github.com/buefy/vue-cli-plugin-buefy/blob/master/.github/CONTRIBUTING.md) before making a pull request.
 
 
 ## License
