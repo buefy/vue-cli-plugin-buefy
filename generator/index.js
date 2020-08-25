@@ -2,7 +2,7 @@ module.exports = (api, options) => {
   // extend package
   api.extendPackage({
     dependencies: {
-      'buefy': '^0.8.0'
+      'buefy': '^0.9.2'
     }
   })
 
@@ -12,8 +12,8 @@ module.exports = (api, options) => {
   } else if (options.addStyle === 'scss') {
     api.extendPackage({
       devDependencies: {
-        'node-sass': '^4.9.0',
-        'sass-loader': '^7.0.1'
+        'dart-sass': '^1.25.0',
+        'sass-loader': '^9.0.3'
       }
     })
 
