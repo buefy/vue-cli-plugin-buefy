@@ -12,7 +12,7 @@ module.exports = (api, options) => {
   } else if (options.addStyle === 'scss') {
     api.extendPackage({
       devDependencies: {
-        'node-sass': '^4.14.1',
+        'dart-sass': '^1.25.0',
         'sass-loader': '^9.0.3'
       }
     })
